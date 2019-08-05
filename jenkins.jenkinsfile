@@ -1,11 +1,11 @@
 node{
    stage('checkout'){
-        
+        bat 'pwd'
     }
     stage('build'){
-        
+        echo 'hi'
     }
     stage('test'){
-        
+        echo 'hi'
     }
 }
