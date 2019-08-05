@@ -14,16 +14,12 @@ node{
    }
 	dir("sourceCode"){
     stage('build'){
-     dir("sourceCode"){
         def checkout = load  "${env.WORKSPACE}//Classes//build.groovy"
 	   checkout.checkout()
-	   }
     }
     stage('test'){
-     dir("sourceCode"){
        def checkout = load  "${env.WORKSPACE}//Classes//build.groovy"
 	   checkout.testCode()
-	   }
     }
 	}
 }
