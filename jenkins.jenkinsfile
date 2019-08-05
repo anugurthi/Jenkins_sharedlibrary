@@ -1,6 +1,11 @@
-node('windows'){
-stage('checkout'){
-
-}
-
+node{
+   stage('checkout'){
+        
+    }
+    stage('build'){
+        
+    }
+    stage('test'){
+        
+    }
 }
