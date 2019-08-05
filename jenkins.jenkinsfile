@@ -1,7 +1,8 @@
 node{
    stage('checkout'){
-       //git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-java-code.git'
-       echo "${env.WORKSPACE}"
+       
+       def checkout = load  "${env.WORKSPACE}//Classes//checkout.groovy"
+	   checkout.checkout()
     }
     stage('build'){
         echo 'hi'
