@@ -12,12 +12,6 @@ node{
 	   devopsSourceCodeCheckout()
 	   }
    }
-   stage('checkout'){
-       def checkout = load  "${env.WORKSPACE}//Classes//checkout.groovy"
-       dir("sourceCode"){
-	   checkout.checkout()
-	   }
-    }
 	dir("sourceCode"){
     stage('build'){
      dir("sourceCode"){
