@@ -1,6 +1,6 @@
 node{
    stage('checkout'){
-        bat 'pwd'
+       echo 'test'
     }
     stage('build'){
         echo 'hi'
