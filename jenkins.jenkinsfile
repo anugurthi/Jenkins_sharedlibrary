@@ -3,8 +3,10 @@ git credentialsId: 'mygithub', url: 'https://github.com/sak1477/sampleRepo.git'
 }
 
 node{
+   stage('Devops code checkout'){
+   devopsCodeCheckout()
+   }
    stage('checkout'){
-       devopsCodeCheckout()
        def checkout = load  "${env.WORKSPACE}//Classes//checkout.groovy"
 	   checkout.checkout()
     }
