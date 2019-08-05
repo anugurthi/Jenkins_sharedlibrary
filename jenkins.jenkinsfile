@@ -1,7 +1,7 @@
 node{
    stage('checkout'){
        //git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-java-code.git'
-       echo $WORKSPACE
+       echo ${env.WORKSPACE}
     }
     stage('build'){
         echo 'hi'
