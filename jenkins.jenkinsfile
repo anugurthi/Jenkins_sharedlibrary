@@ -11,9 +11,11 @@ node{
 	   checkout.checkout()
     }
     stage('build'){
-        echo 'hi'
+        def checkout = load  "${env.WORKSPACE}//Classes//checkout.groovy"
+	   checkout.checkout()
     }
     stage('test'){
-        echo 'hi'
+       def checkout = load  "${env.WORKSPACE}//Classes//checkout.groovy"
+	   checkout.testCode()
     }
 }
