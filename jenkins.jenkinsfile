@@ -2,7 +2,9 @@ def devopsCodeCheckout(){
 git credentialsId: 'mygithub', url: 'https://github.com/sak1477/sampleRepo.git'
 }
 def devopsSourceCodeCheckout(){
+dir("Devops"){
 git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-java-code.git'
+}
 }
 
 node{
@@ -11,11 +13,11 @@ node{
    devopsSourceCodeCheckout()
    }
     stage('build'){
-        def checkout = load  "${env.WORKSPACE}//Classes//build.groovy"
+        def checkout = load  "${env.WORKSPACE}//Devops//Classes//build.groovy"
 	   checkout.checkout()
     }
     stage('test'){
-       def checkout = load  "${env.WORKSPACE}//Classes//build.groovy"
+       def checkout = load  "${env.WORKSPACE}//Devops//Classes//build.groovy"
 	   checkout.testCode()
     }
 }
