@@ -1,10 +1,10 @@
 def devopsCodeCheckout(){
+dir("Devops"){
 git credentialsId: 'mygithub', url: 'https://github.com/sak1477/sampleRepo.git'
 }
-def devopsSourceCodeCheckout(){
-dir("Devops"){
-git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-java-code.git'
 }
+def devopsSourceCodeCheckout(){
+git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-java-code.git'
 }
 
 node{
