@@ -1,10 +1,6 @@
-def devopsCodeCheckout(){
-dir("Devops"){
-git credentialsId: 'mygithub', url: 'https://github.com/sak1477/sampleRepo.git'
-}
-}
-def devopsSourceCodeCheckout(){
+def CodeCheckout(){
 git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-java-code.git'
+bat 'git submodule update --init'
 }
 
 node{
@@ -12,8 +8,7 @@ node{
    deleteDir()
    }
    stage('Devops code checkout'){
-   devopsSourceCodeCheckout()
-   devopsCodeCheckout()
+   CodeCheckout()
    }
     stage('build'){
         def checkout = load  "${env.WORKSPACE}//Devops//Classes//build.groovy"
