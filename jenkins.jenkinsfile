@@ -8,8 +8,10 @@ git credentialsId: 'mygithub', url: 'https://github.com/suneracodethon/sample-ja
 }
 
 node{
-   stage('Devops code checkout'){
+   stage('Clear workspace'){
    deleteDir()
+   }
+   stage('Devops code checkout'){
    devopsCodeCheckout()
    devopsSourceCodeCheckout()
    }
