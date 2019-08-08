@@ -14,6 +14,10 @@ node{
         def checkout = load  "${env.WORKSPACE}//Devops//Classes//build.groovy"
 	   checkout.checkout()
     }
+    stage('cleanMycode'){
+    def checkout = load  "${env.WORKSPACE}//Devops//Classes//build.groovy"
+	   checkout.cleanMycode()
+    }
     stage('test'){
        def checkout = load  "${env.WORKSPACE}//Devops//Classes//build.groovy"
 	   checkout.testCode()
